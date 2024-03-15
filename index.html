@@ -22,7 +22,8 @@
     <script type="text/javascript">
     var map = L.map('map', {
     crs: L.CRS.Simple,    
-    zoomControl: false
+    zoomControl: false,
+    scrollWheelZoom: false
 });
 //customOptions
 var customPopupRepentance="<font size='5'><b>Repentance</font><br/></b> Military Base, Fortress World, Military, Politics, Religion, Industrial<br/><br/><img src='planets/repentance.jpg' border='1' alt='Repentance img' width='400px'/><br/><br/>Kyrene’s largest moon has been converted into a penal colony harboring traitors, sinners, and the unruly form across the sector. The planet is a locked down fortress, in part because it houses some key defense systems for Kyrene, and hosts mining operations for Kyrene’s orbital shipyards.";
@@ -101,7 +102,69 @@ var csmIcon = L.icon({
 		popupAnchor: [1, -34],
 		tooltipAnchor: [16, -28]
 	});
-	    
+var csm2Icon = L.icon({
+		iconUrl:       'icons/torso/csm2.png',
+		iconRetinaUrl: 'icons/torso/csm2.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var dark_angelsIcon = L.icon({
+		iconUrl:       'icons/torso/dark_angels.png',
+		iconRetinaUrl: 'icons/torso/dark_angels.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var death_guardsIcon = L.icon({
+		iconUrl:       'icons/torso/death_guards.png',
+		iconRetinaUrl: 'icons/torso/death_guards.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var imperial_guardsIcon = L.icon({
+		iconUrl:       'icons/torso/imperial_guards.png',
+		iconRetinaUrl: 'icons/torso/imperial_guards.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var necronsIcon = L.icon({
+		iconUrl:       'icons/torso/necrons.png',
+		iconRetinaUrl: 'icons/torso/necrons.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var orksIcon = L.icon({
+		iconUrl:       'icons/torso/orks.png',
+		iconRetinaUrl: 'icons/torso/orks.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var space_wolvesIcon = L.icon({
+		iconUrl:       'icons/torso/space_wolves.png',
+		iconRetinaUrl: 'icons/torso/space_wolves.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var tyranidsIcon = L.icon({
+		iconUrl:       'icons/torso/tyranids.png',
+		iconRetinaUrl: 'icons/torso/tyranids.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var world_eatersIcon = L.icon({
+		iconUrl:       'icons/torso/world_eaters.png',
+		iconRetinaUrl: 'icons/torso/world_eaters.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});    
 
 //Planet Markers
 var planet_Repentance = L.marker([671, 805],{opacity: 0}).bindPopup(customPopupRepentance,customOptions).addTo(map);
@@ -142,10 +205,15 @@ var fortification_marker = L.marker([410, 498],{draggable: true, icon: fortifica
 
 //torso markers
 var csm_marker = L.marker([410, 498],{draggable: true, icon: csmIcon}).addTo(map)
-
-
-
-
+var csm2_marker = L.marker([410, 498],{draggable: true, icon: csm2Icon}).addTo(map)
+var dark_angels_marker = L.marker([410, 498],{draggable: true, icon: dark_angelsIcon}).addTo(map)
+var death_guards_marker = L.marker([410, 498],{draggable: true, icon: death_guardsIcon}).addTo(map)
+var imperial_guards_marker = L.marker([410, 498],{draggable: true, icon: imperial_guardsIcon}).addTo(map)
+var necrons_marker = L.marker([410, 498],{draggable: true, icon: necronsIcon}).addTo(map)
+var orks_marker = L.marker([410, 498],{draggable: true, icon: orksIcon}).addTo(map)
+var space_wolves_marker = L.marker([410, 498],{draggable: true, icon: space_wolvesIcon}).addTo(map)
+var tyranids_marker = L.marker([410, 498],{draggable: true, icon: tyranidsIcon}).addTo(map)
+var world_eaters_marker = L.marker([410, 498],{draggable: true, icon: world_eatersIcon}).addTo(map)
 
     </script>
   </body>
