@@ -23,7 +23,8 @@
     var map = L.map('map', {
     crs: L.CRS.Simple,    
     zoomControl: false,
-    scrollWheelZoom: false
+    scrollWheelZoom: false,
+    doubleClickZoom: false
 });
 //customOptions
 var customPopupRepentance="<font size='5'><b>Repentance</font><br/></b> Military Base, Fortress World, Military, Politics, Religion, Industrial<br/><br/><img src='planets/repentance.jpg' border='1' alt='Repentance img' width='400px'/><br/><br/>Kyrene’s largest moon has been converted into a penal colony harboring traitors, sinners, and the unruly form across the sector. The planet is a locked down fortress, in part because it houses some key defense systems for Kyrene, and hosts mining operations for Kyrene’s orbital shipyards.";
@@ -89,8 +90,8 @@ var damageIcon = L.icon({
 		tooltipAnchor: [16, -28]
 	});
 var foxholesIcon = L.icon({
-		iconUrl:       'icons/upgrades/foxhholes.png',
-		iconRetinaUrl: 'icons/upgrades/foxhholes.png',
+		iconUrl:       'icons/upgrades/foxholes.png',
+		iconRetinaUrl: 'icons/upgrades/foxholes.png',
 		iconAnchor:  [12, 41],
 		popupAnchor: [1, -34],
 		tooltipAnchor: [16, -28]
