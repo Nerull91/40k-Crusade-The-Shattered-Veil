@@ -88,9 +88,30 @@ var damageIcon = L.icon({
 		popupAnchor: [1, -34],
 		tooltipAnchor: [16, -28]
 	});
-var fortificationIcon = L.icon({
-		iconUrl:       'icons/fortification.png',
-		iconRetinaUrl: 'icons/fortification.png',
+var foxholesIcon = L.icon({
+		iconUrl:       'icons/upgrades/foxhholes.png',
+		iconRetinaUrl: 'icons/upgrades/foxhholes.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var krak_minesIcon = L.icon({
+		iconUrl:       'icons/upgrades/krak_mines.png',
+		iconRetinaUrl: 'icons/upgrades/krak_mines.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var tactical_radarIcon = L.icon({
+		iconUrl:       'icons/upgrades/tactical_radar.png',
+		iconRetinaUrl: 'icons/upgrades/tactical_radar.png',
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28]
+	});
+var targeting_jammersIcon = L.icon({
+		iconUrl:       'icons/upgrades/targeting_jammers.png',
+		iconRetinaUrl: 'icons/upgrades/targeting_jammers.png',
 		iconAnchor:  [12, 41],
 		popupAnchor: [1, -34],
 		tooltipAnchor: [16, -28]
@@ -201,7 +222,10 @@ var tychon_sector = L.marker([1066, 345],{opacity: 0}).bindPopup(customTychon,cu
 var damage_marker = L.marker([410, 498],{draggable: true, icon: damageIcon}).addTo(map);
 
 //Fortification markers
-var fortification_marker = L.marker([410, 498],{draggable: true, icon: fortificationIcon}).addTo(map);
+var foxholes_marker = L.marker([410, 498],{draggable: true, icon: foxholesIcon}).addTo(map);
+var krak_mines_marker = L.marker([410, 498],{draggable: true, icon: krak_minesIcon}).addTo(map);
+var tactical_radar_marker = L.marker([410, 498],{draggable: true, icon: tactical_radarIcon}).addTo(map);
+var targeting_jammers_marker = L.marker([410, 498],{draggable: true, icon: targeting_jammersIcon}).addTo(map);
 
 //torso markers
 var csm_marker = L.marker([410, 498],{draggable: true, icon: csmIcon}).addTo(map)
