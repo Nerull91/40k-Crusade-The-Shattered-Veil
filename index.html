@@ -242,13 +242,13 @@ var tychon_sector = L.marker([1066, 345],{opacity: 0}).bindPopup(customTychon,cu
 
 
 //Damage Markers
-var damage_marker = L.marker([410, 498],{draggable: true, icon: damageIcon}).addTo(map);
+var damage_marker = L.marker([-50, 700],{draggable: true, icon: damageIcon}).addTo(map);
 
 //Fortification markers
-var foxholes_marker = L.marker([410, 498],{draggable: true, icon: foxholesIcon}).addTo(map);
-var krak_mines_marker = L.marker([410, 498],{draggable: true, icon: krak_minesIcon}).addTo(map);
-var tactical_radar_marker = L.marker([410, 498],{draggable: true, icon: tactical_radarIcon}).addTo(map);
-var targeting_jammers_marker = L.marker([410, 498],{draggable: true, icon: targeting_jammersIcon}).addTo(map);
+var foxholes_marker = L.marker([-50, 500],{draggable: true, icon: foxholesIcon}).bindPopup("Foxholes").addTo(map);
+var krak_mines_marker = L.marker([-50, 600],{draggable: true, icon: krak_minesIcon}).bindPopup("Krak Mines").addTo(map);
+var tactical_radar_marker = L.marker([-50, 800],{draggable: true, icon: tactical_radarIcon}).bindPopup("Tactical Radar").addTo(map);
+var targeting_jammers_marker = L.marker([-50, 900],{draggable: true, icon: targeting_jammersIcon}).bindPopup("Targeting Jammers").addTo(map);
 
 //torso markers reset
 var csm_marker = L.marker([500, 1430],{draggable: true, icon: csmIcon}).addTo(map)
