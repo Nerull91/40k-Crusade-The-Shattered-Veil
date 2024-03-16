@@ -81,13 +81,13 @@ var image = L.imageOverlay('map/space_map2.png', bounds).addTo(map);
 map.fitBounds(bounds);  
 
 //Coordinate Finder
-var marker = L.marker([0, 0], {
+/*var marker = L.marker([0, 0], {
       draggable: true,
     }).addTo(map);
     marker.bindPopup('LatLng Marker').openPopup();
     marker.on('dragend', function(e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });
+    });*/
 
 //icons
 var damageIcon = L.icon({
@@ -240,29 +240,29 @@ var tychon_sector = L.marker([1066, 345],{opacity: 0}).bindPopup(customTychon,cu
 
 
 //Damage Markers
-var damage_marker = L.marker([-50, 700],{draggable: true, icon: damageIcon}).addTo(map);
+var damage_marker = L.marker([-50, 700],{draggable: false, icon: damageIcon}).addTo(map);
 
 //Fortification markers
-var foxholes_marker = L.marker([-50, 500],{draggable: true, icon: foxholesIcon}).bindPopup("Foxholes").addTo(map);
-var krak_mines_marker = L.marker([-50, 600],{draggable: true, icon: krak_minesIcon}).bindPopup("Krak Mines").addTo(map);
-var tactical_radar_marker = L.marker([-50, 800],{draggable: true, icon: tactical_radarIcon}).bindPopup("Tactical Radar").addTo(map);
-var targeting_jammers_marker = L.marker([-50, 900],{draggable: true, icon: targeting_jammersIcon}).bindPopup("Targeting Jammers").addTo(map);
+var foxholes_marker = L.marker([-50, 500],{draggable: false, icon: foxholesIcon}).bindPopup("Foxholes").addTo(map);
+var krak_mines_marker = L.marker([-50, 600],{draggable: false, icon: krak_minesIcon}).bindPopup("Krak Mines").addTo(map);
+var tactical_radar_marker = L.marker([-50, 800],{draggable: false, icon: tactical_radarIcon}).bindPopup("Tactical Radar").addTo(map);
+var targeting_jammers_marker = L.marker([-50, 900],{draggable: false, icon: targeting_jammersIcon}).bindPopup("Targeting Jammers").addTo(map);
 
 //torso markers reset
-var csm_marker = L.marker([500, 1430],{draggable: true, icon: csmIcon}).addTo(map)
-var csm2_marker = L.marker([400, 1430],{draggable: true, icon: csm2Icon}).addTo(map)
-var death_guards_marker = L.marker([300, 1430],{draggable: true, icon: death_guardsIcon}).addTo(map)
-var world_eaters_marker = L.marker([200, 1430],{draggable: true, icon: world_eatersIcon}).addTo(map)
+var csm_marker = L.marker([500, 1430],{draggable: false, icon: csmIcon}).addTo(map)
+var csm2_marker = L.marker([400, 1430],{draggable: false, icon: csm2Icon}).addTo(map)
+var death_guards_marker = L.marker([300, 1430],{draggable: false, icon: death_guardsIcon}).addTo(map)
+var world_eaters_marker = L.marker([200, 1430],{draggable: false, icon: world_eatersIcon}).addTo(map)
 	    
-var dark_angels_marker = L.marker([1250, 500],{draggable: true, icon: dark_angelsIcon}).addTo(map)
-var imperial_guards_marker = L.marker([1250, 600],{draggable: true, icon: imperial_guardsIcon}).addTo(map)
-var space_wolves_marker = L.marker([1250, 700],{draggable: true, icon: space_wolvesIcon}).addTo(map)
-var grey_knight_marker = L.marker([1250, 800],{draggable: true, icon: grey_knightIcon}).addTo(map)   
+var dark_angels_marker = L.marker([1250, 500],{draggable: false, icon: dark_angelsIcon}).addTo(map)
+var imperial_guards_marker = L.marker([1250, 600],{draggable: false, icon: imperial_guardsIcon}).addTo(map)
+var space_wolves_marker = L.marker([1250, 700],{draggable: false, icon: space_wolvesIcon}).addTo(map)
+var grey_knight_marker = L.marker([1250, 800],{draggable: false, icon: grey_knightIcon}).addTo(map)   
 
-var orks_marker = L.marker([550, -50],{draggable: true, icon: orksIcon}).addTo(map)
-var necrons_marker = L.marker([450, -50],{draggable: true, icon: necronsIcon}).addTo(map)
-var tyranids_marker = L.marker([350, -50],{draggable: true, icon: tyranidsIcon}).addTo(map)
-var tyranids2_marker = L.marker([250, -50],{draggable: true, icon: tyranids2Icon}).addTo(map)
+var orks_marker = L.marker([550, -50],{draggable: false, icon: orksIcon}).addTo(map)
+var necrons_marker = L.marker([450, -50],{draggable: false, icon: necronsIcon}).addTo(map)
+var tyranids_marker = L.marker([350, -50],{draggable: false, icon: tyranidsIcon}).addTo(map)
+var tyranids2_marker = L.marker([250, -50],{draggable: false, icon: tyranids2Icon}).addTo(map)
 
 
 	    
