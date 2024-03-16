@@ -63,6 +63,8 @@ var customXenfar="<font size='5'><b>Xenfar System</font><br/></b>The furthest of
 var customProcyon="<font size='5'><b>Procyon System</font><br/></b>Once the seat of a mighty Necron dynasty, Procyon now plays host to a series of frontier worlds. Imperial control over the system has slipped away over the past few decades as multiple Chaos campaigns have made significant headway in establishing a foothold in the system, and the traitorous turn of two of its knight households have helped doom the system to strife.";
 var customTychon="<font size='5'><b>Tychon System</font><br/></b>If there’s a system that still qualifies as Imperium held in Vadinax, Tychon is it. The center of the system is dominated by several Imperium-held worlds which have managed to hold strong against the darkness of the Great Rift as other systems in the sector have slipped away.";
 
+//popupUpgrades
+var customKrakMines="Krak Mines";
 
 
 // specify popup options 
@@ -246,7 +248,7 @@ var damage_marker = L.marker([-50, 700],{draggable: false, icon: damageIcon}).ad
 
 //Fortification markers
 var foxholes_marker = L.marker([-50, 500],{draggable: false, icon: foxholesIcon}).bindPopup("Foxholes").addTo(map);
-var krak_mines_marker = L.marker([-50, 600],{draggable: false, icon: krak_minesIcon}).bindPopup("Krak Mines").addTo(map);
+var krak_mines_marker = L.marker([-50, 600],{draggable: false, icon: krak_minesIcon}).bindPopup(customKrakMines,customOptions).addTo(map);
 var tactical_radar_marker = L.marker([-50, 800],{draggable: false, icon: tactical_radarIcon}).bindPopup("Tactical Radar").addTo(map);
 var targeting_jammers_marker = L.marker([-50, 900],{draggable: false, icon: targeting_jammersIcon}).bindPopup("Targeting Jammers").addTo(map);
 
