@@ -248,7 +248,7 @@ var damage_marker = L.marker([-50, 700],{draggable: false, icon: damageIcon}).ad
 
 //Fortification markers
 var foxholes_marker = L.marker([-50, 500],{draggable: false, icon: foxholesIcon}).bindPopup("Foxholes").addTo(map);
-var krak_mines_marker = L.marker([-50, 600],{draggable: false, icon: krak_minesIcon}).bindPopup(customKrakMines,customOptions).addTo(map);
+var krak_mines_marker = L.marker([-50, 600],{draggable: true, icon: krak_minesIcon}).bindPopup(customKrakMines,customOptions).addTo(map);
 var tactical_radar_marker = L.marker([-50, 800],{draggable: false, icon: tactical_radarIcon}).bindPopup("Tactical Radar").addTo(map);
 var targeting_jammers_marker = L.marker([-50, 900],{draggable: false, icon: targeting_jammersIcon}).bindPopup("Targeting Jammers").addTo(map);
 
