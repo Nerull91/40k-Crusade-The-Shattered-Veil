@@ -83,13 +83,13 @@ var image = L.imageOverlay('map/space_map2.png', bounds).addTo(map);
 map.fitBounds(bounds);  
 
 //Coordinate Finder
-/*var marker = L.marker([0, 0], {
+var marker = L.marker([0, 0], {
       draggable: true,
     }).addTo(map);
     marker.bindPopup('LatLng Marker').openPopup();
     marker.on('dragend', function(e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });*/
+    });
 
 //icons
 var damageIcon = L.icon({
