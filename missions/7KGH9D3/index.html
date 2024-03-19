@@ -1,3 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission 1 - Classified Imperium Briefing</title>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    #audio-player {
+        width: 300px;
+        margin: 50px auto;
+        text-align: left;
+    }
+    #typing-text {
+        color: lime;
+        white-space: pre-line;
+        margin-top: 20px; /* adjust according to your preference */
+        width: 200%; /* 50% wider */
+    }
+</style>
+</head>
+<body>
+<div id="audio-player">
+    <audio id="audio" controls>
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        <input type="range" id="seek-bar" min="0" value="0">
+    </div>
+    <div id="typing-text"></div>
+</div>
+
 <script>
     const audio = document.getElementById('audio');
     const volumeControl = document.getElementById('volume-control');
@@ -47,3 +85,6 @@
         stopTyping(); // Stop typing when audio ends
     });
 </script>
+
+</body>
+</html>
