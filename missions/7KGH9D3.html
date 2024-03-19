@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP3 Player</title>
+<style>
+  #play-button {
+    width: 100px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #play-button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+<audio id="audio-player" src="your-audio-file.mp3"></audio>
+<button id="play-button">Play</button>
 
+<script>
+  var audioPlayer = document.getElementById("audio-player");
+  var playButton = document.getElementById("play-button");
+
+  playButton.addEventListener("click", function() {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      playButton.textContent = "Pause";
+    } else {
+      audioPlayer.pause();
+      playButton.textContent = "Play";
+    }
+  });
+</script>
+</body>
+</html>
