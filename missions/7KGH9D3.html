@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mission 1 - Classified Imperial Briefing</title>
+<title>MP3 Player</title>
 <style>
   body {
     background-color: black;
@@ -25,11 +25,20 @@
   #play-button:hover {
     background-color: #003366;
   }
+
+  /* Additional styling for audio controls */
+  #audio-controls {
+    margin-top: 20px;
+  }
 </style>
 </head>
 <body>
-<audio id="audio-player" src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true"></audio>
+<audio id="audio-player" src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" controls></audio>
 <button id="play-button">Play</button>
+
+<div id="audio-controls">
+  <!-- Add additional controls here if needed -->
+</div>
 
 <script>
   var audioPlayer = document.getElementById("audio-player");
