@@ -13,7 +13,7 @@
     #audio-player {
         width: 300px;
         margin: 50px auto;
-        text-align: center;
+        text-align: left;
     }
     #typing-text {
         color: lime;
@@ -49,7 +49,7 @@
         if (index < briefingText.length) {
             typingText.innerHTML += briefingText.charAt(index);
             index++;
-            setTimeout(typeWriter, Math.floor(Math.random() * 100)); // Adjust typing speed here
+            setTimeout(typeWriter, Math.floor(Math.random() * 125)); // Adjust typing speed here
         }
     }
 
