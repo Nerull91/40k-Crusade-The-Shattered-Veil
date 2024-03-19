@@ -16,6 +16,19 @@
     margin-top: 20px;
   }
 
+  /* Styling for custom audio player */
+  #audio-player-container {
+    background-color: #001F3F;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  #audio-player {
+    width: 100%;
+    background-color: black; /* Control bar background color */
+    color: gold; /* Control bar text color */
+  }
+
   /* Styling for the new play button */
   #play-button {
     width: 100px;
@@ -31,32 +44,89 @@
   #play-button:hover {
     background-color: #003366;
   }
+
+  /* Styling for typing effect */
+  #typing-text {
+    margin-top: 20px;
+    font-size: 18px;
+    white-space: pre-line;
+  }
 </style>
 </head>
 <body>
-<audio id="audio-player" src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" controls></audio>
+<div id="audio-player-container">
+  <audio id="audio-player" src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true"></audio>
+</div>
 
 <div id="audio-controls">
-  <!-- Add additional controls here if needed -->
+  <button id="play-button">Play</button>
 </div>
+
+<div id="typing-text"></div>
 
 <script>
   var audioPlayer = document.getElementById("audio-player");
-  var playButton = document.createElement("button");
-  playButton.id = "play-button";
-  playButton.textContent = "Play";
+  var playButton = document.getElementById("play-button");
+  var typingText = document.getElementById("typing-text");
+  var textToType = `Mission Briefing: Operation Cerberus
+
+Classification: Ordo Malleus – Level: Inquisitorial Clearance
+
+Objective: Acquisition of Strategic Vox Relay Nodes
+
+Target Planets: Codename Cerberus – Vadinax Sector
+
+Background:
+Planets Cerberus, nestled within the turbulent expanse of the Vadinax Sector, houses vital Vox Relay Nodes crucial for interstellar communication within the Imperium's domain. Recent astropathic readings have detected an impending incursion from hostile forces seeking to disrupt these critical infrastructures. In the name of the Emperor, it is imperative that we secure control of these nodes to maintain the Emperor's divine will across the sector.
+
+Mission Overview:
+Operation Cerberus is a dual-pronged offensive and defensive campaign, orchestrated to ensure the dominance of the Imperium's communication network. Our righteous forces will engage in fierce combat against the heretical and Xenos invaders while simultaneously fortifying our defenses to repel any incursions aimed at disrupting the Emperor's voice.
+
+Execution:
+
+Deployment and Crusade: Our vanguard forces, blessed by the Emperor's grace, will descend upon Cerberus, descending from the heavens in thunderous drop pod assaults and valiant landings from celestial transports. The Emperor's wrath shall be swift and righteous as we establish our presence upon the sacred soil of Cerberus.
+
+Target Purification: Our zealous troops, guided by the Omnissiah's wisdom, will scour Cerberus for the foul nests of heresy, identifying and purging the enemy's blasphemous Vox Relay Nodes. Simultaneously, our Adeptus Mechanicus allies will labor tirelessly to bolster our own Vox network, ensuring uninterrupted communion with our brethren across the stars.
+
+Crusade and Cleansing: Blessed strike teams, led by the indomitable Adeptus Astartes and valiant Astra Militarum, will engage in combat to cleanse the enemy's tainted presence from Cerberus. Every heretic defiler that dares to oppose the Emperor's will shall be met with righteous retribution and purifying flame.
+
+Divine Support: The Emperor's divine light shall guide our warriors, as they unleash the fury of blessed artillery and the righteous wrath of Imperial Forces upon the enemy's fortifications. Aerial support from our Imperial Navy shall rain death from above upon the heretics, ensuring their annihilation and the glory of the Imperium's victory.
+
+Resilience and Vigilance: Even as the enemy hordes surge against our righteous bastions, we shall stand firm, unyielding in our devotion to the Emperor's holy cause. Our resolve shall not waver, for we are the chosen instruments of His divine will, and in His name, we shall emerge victorious.
+
+Rules of Engagement:
+
+Prioritize the sanctity of the Emperor's will and the security of the Vox Relay Nodes.
+Show no mercy to the heretical forces that seek to defile our sacred mission.
+Maintain vigilance against the insidious machinations of the Ruinous Powers and their minions.
+
+Conclusion:
+Operation Cerberus embodies the Emperor's divine mandate to purge the galaxy of heresy and ensure the dominance of His righteous rule. Victory in this holy crusade will not only secure the Imperium's communication network but also strike fear into the hearts of all who dare to oppose the might of the Imperium. Let the enemies of mankind tremble, for the Emperor protects!
+
+End of Briefing`;
 
   playButton.addEventListener("click", function() {
     if (audioPlayer.paused) {
       audioPlayer.play();
       playButton.textContent = "Pause";
+      typeText();
     } else {
       audioPlayer.pause();
       playButton.textContent = "Play";
     }
   });
 
-  document.getElementById("audio-controls").appendChild(playButton);
+  function typeText() {
+    typingText.textContent = ""; // Clear existing text
+    var index = 0;
+    var typingInterval = setInterval(function() {
+      typingText.textContent += textToType[index];
+      index++;
+      if (index >= textToType.length) {
+        clearInterval(typingInterval);
+      }
+    }, 50); // Adjust typing speed here (milliseconds per character)
+  }
 </script>
 </body>
 </html>
