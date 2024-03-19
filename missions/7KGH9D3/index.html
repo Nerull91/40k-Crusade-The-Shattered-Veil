@@ -13,11 +13,13 @@
     #audio-player {
         width: 300px;
         margin: 50px auto;
+        text-align: center;
     }
     #typing-text {
+        color: lime;
         white-space: pre-line;
         overflow: hidden;
-        border-right: 2px solid white;
+        border-right: 2px solid lime;
         padding-right: 5px; /* adjust according to your preference */
         margin-bottom: 10px; /* adjust according to your preference */
     }
@@ -25,15 +27,13 @@
 </head>
 <body>
 <div id="audio-player">
-    <div id="typing-text"></div>
     <audio id="audio" controls>
         <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <div>
-        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
-        <input type="range" id="seek-bar" min="0" value="0">
-    </div>
+    <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+    <input type="range" id="seek-bar" min="0" value="0">
+    <div id="typing-text"></div>
 </div>
 
 <script>
