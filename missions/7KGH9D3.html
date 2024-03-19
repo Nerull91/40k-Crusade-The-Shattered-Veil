@@ -11,6 +11,25 @@
     font-family: Arial, sans-serif;
   }
 
+  /* Additional styling for audio controls */
+  #audio-controls {
+    margin-top: 20px;
+  }
+
+  /* Styling for custom audio player */
+  #audio-player-container {
+    background-color: #001F3F;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  #audio-player {
+    width: 100%;
+    background-color: black; /* Control bar background color */
+    color: gold; /* Control bar text color */
+  }
+
+  /* Styling for the new play button */
   #play-button {
     width: 100px;
     height: 40px;
@@ -25,16 +44,12 @@
   #play-button:hover {
     background-color: #003366;
   }
-
-  /* Additional styling for audio controls */
-  #audio-controls {
-    margin-top: 20px;
-  }
 </style>
 </head>
 <body>
-<audio id="audio-player" src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" controls></audio>
-<button id="play-button">Play</button>
+<div id="audio-player-container">
+  <audio id="audio-player" src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true"></audio>
+</div>
 
 <div id="audio-controls">
   <!-- Add additional controls here if needed -->
@@ -42,7 +57,9 @@
 
 <script>
   var audioPlayer = document.getElementById("audio-player");
-  var playButton = document.getElementById("play-button");
+  var playButton = document.createElement("button");
+  playButton.id = "play-button";
+  playButton.textContent = "Play";
 
   playButton.addEventListener("click", function() {
     if (audioPlayer.paused) {
@@ -53,6 +70,8 @@
       playButton.textContent = "Play";
     }
   });
+
+  document.getElementById("audio-controls").appendChild(playButton);
 </script>
 </body>
 </html>
