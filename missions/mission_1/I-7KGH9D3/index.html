@@ -6,7 +6,7 @@
 <title>Mission 1 - Classified Imperium Briefing</title>
 <style>
     body {
-        background-image: url('https://raw.githubusercontent.com/Nerull91/40k-Crusade-The-Shattered-Veil/main/missions/imperium_bg.jpg');
+        background-image: url('https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/background_image.jpg?raw=true');
         background-size: cover;
         color: white;
         font-family: Arial, sans-serif;
@@ -19,17 +19,19 @@
         text-align: left;
     }
     #typing-text {
-        color: lime; 
+        color: lime;
         white-space: pre-line;
         margin-top: 20px; /* adjust according to your preference */
         width: 200%; /* 50% wider */
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        padding: 10px;
     }
 </style>
 </head>
 <body>
 <div id="audio-player">
     <audio id="audio" controls>
-        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/e218607537c9c6e9aa96edfb3ab621fb4f9bfe51/missions/mission_1/I-7KGH9D3/mission1_imperium_briefing.mp3?raw=true" type="audio/mpeg">
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <div>
@@ -44,7 +46,7 @@
     const volumeControl = document.getElementById('volume-control');
     const seekBar = document.getElementById('seek-bar');
     const typingText = document.getElementById('typing-text');
-    const briefingText = `Mission Briefing: Operation Cerberus\n\nClassification: Ordo Malleus – Level: Inquisitorial Clearance\n\nObjective: Acquisition of Strategic Vox Relay Nodes\n\nTarget Planets: Codename Cerberus – Vadinax Sector\n\nBackground:\nPlanets Cerberus, nestled within the turbulent expanse of the Vadinax Sector, houses vital Vox Relay Nodes crucial for interstellar communication within the Imperium's domain. Recent astropathic readings have detected an impending incursion from hostile forces seeking to disrupt these critical infrastructures. In the name of the Emperor, it is imperative that we secure control of these nodes to maintain the Emperor's divine will across the sector.\n\nMission Overview:\nOperation Cerberus is a dual-pronged offensive and defensive campaign, orchestrated to ensure the dominance of the Imperium's communication network. Our righteous forces will engage in fierce combat against the heretical and Xenos invaders while simultaneously fortifying our defenses to repel any incursions aimed at disrupting the Emperor's voice.\n\nExecution:\n\nDeployment and Crusade: Our vanguard forces, blessed by the Emperor's grace, will descend upon Cerberus, descending from the heavens in thunderous drop pod assaults and valiant landings from celestial transports. The Emperor's wrath shall be swift and righteous as we establish our presence upon the sacred soil of Cerberus.\n\nTarget Purification: Our zealous troops, guided by the Omnissiah's wisdom, will scour Cerberus for the foul nests of heresy, identifying and purging the enemy's blasphemous Vox Relay Nodes. Simultaneously, our Adeptus Mechanicus allies will labor tirelessly to bolster our own Vox network, ensuring uninterrupted communion with our brethren across the stars.\n\nCrusade and Cleansing: Blessed strike teams, led by the indomitable Adeptus Astartes and valiant Astra Militarum, will engage in combat to cleanse the enemy's tainted presence from Cerberus. Every heretic defiler that dares to oppose the Emperor's will shall be met with righteous retribution and purifying flame.\n\nDivine Support: The Emperor's divine light shall guide our warriors, as they unleash the fury of blessed artillery and the righteous wrath of Imperial Forces upon the enemy's fortifications. Aerial support from our Imperial Navy shall rain death from above upon the heretics, ensuring their annihilation and the glory of the Imperium's victory.\n\nResilience and Vigilance: Even as the enemy hordes surge against our righteous bastions, we shall stand firm, unyielding in our devotion to the Emperor's holy cause. Our resolve shall not waver, for we are the chosen instruments of His divine will, and in His name, we shall emerge victorious.\n\nRules of Engagement:\n\nPrioritize the sanctity of the Emperor's will and the security of the Vox Relay Nodes.\nShow no mercy to the heretical forces that seek to defile our sacred mission.\nMaintain vigilance against the insidious machinations of the Ruinous Powers and their minions.\n\nConclusion:\nOperation Cerberus embodies the Emperor's divine mandate to purge the galaxy of heresy and ensure the dominance of His righteous rule. Victory in this holy crusade will not only secure the Imperium's communication network but also strike fear into the hearts of all who dare to oppose the might of the Imperium. Let the enemies of mankind tremble, for the Emperor protects!\n\nEnd of Briefing`;
+    const briefingText = `Mission Briefing: Operation Cerberus\n\nClassification: Ordo Malleus – Level: Inquisitorial Clearance\n\nObjective: Acquisition of Strategic Vox Relay Nodes\n\nTarget Planets: Codename Cerberus – Vadinax Sector\n\nBackground:\nPlanets Cerberus, nestled within the turbulent expanse of the Vadinax Sector, houses vital Vox Relay Nodes crucial for interstellar communication within the Imperium's domain. Recent astropathic readings have detected an impending incursion from hostile forces seeking to disrupt these critical infrastructures. In the name of the Emperor, it is imperative that we secure control of these nodes to maintain the Emperor's divine will across the sector.\n\nMission Overview:\nOperation Cerberus is a dual-pronged offensive and defensive campaign, orchestrated to ensure the dominance of the Imperium's communication network. Our righteous forces will engage in fierce combat against the heretical and Xenos invaders while simultaneously fortifying our defenses to repel any incursions aimed at disrupting the Emperor's voice.\n\nExecution:\n\nDeployment and Crusade: Our vanguard forces, blessed by the Emperor's grace, will descend upon Cerberus, descending from the heavens in thunderous drop pod assaults and valiant landings from celestial transports. The Emperor's wrath shall be swift and righteous as we establish our presence upon the sacred soil of Cerberus.\n\nTarget Purification: Our zealous troops, guided by the Omnissiah's wisdom, will scour Cerberus for the foul nests of heresy, identifying and purging the enemy's blasphemous Vox Relay Nodes. Simultaneously, our Adeptus Mechanicus allies will labor tirelessly to bolster our own Vox network, ensuring uninterrupted communion with our brethren across the stars.\n\nCrusade and Cleansing: Blessed strike teams, led by the indomitable Adeptus Astartes and valiant Astra Militarum, will engage in combat to cleanse the enemy's tainted presence from Cerberus. Every heretic defiler that dares to oppose the Emperor's will shall be met with righteous retribution and purifying flame.\n\nDivine Support: The Emperor's divine light shall guide our warriors, as they unleash the fury of blessed artillery and the righteous wrath of Imperial Forces upon the enemy's fortifications. Aerial support from our Imperial Navy shall rain death from above upon the heretics, ensuring their annihilation and the glory of the Imperium's victory.\n\nResilience and Vigilance: Even as the enemy hordes surge against our righteous bastions, we shall stand firm, unyielding in our devotion to the Emperor's holy cause. Our resolve shall not waver, for we are the chosen instruments of His divine will, and in His name, we shall emerge victorious.\n\nRules of Engagement:\n\nPrioritize the sanctity of the Emperor's will and the security of the Vox Relay Nodes.\nShow no mercy to the heretical forces that seek to defile our sacred mission.\nMaintain`;
 
     let index = 0;
 
@@ -57,9 +59,11 @@
     }
 
     audio.addEventListener('play', function() {
-        if (index === 0) {
-            typeWriter(); // Start typing only if text hasn't been typed yet
-        }
+        typeWriter(); // Start typing
+    });
+
+    audio.addEventListener('pause', function() {
+        // Typing animation continues even when paused
     });
 
     volumeControl.addEventListener('input', function() {
@@ -80,4 +84,3 @@
 </script>
 </body>
 </html>
-
