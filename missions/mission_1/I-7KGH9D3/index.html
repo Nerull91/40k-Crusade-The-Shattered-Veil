@@ -6,8 +6,6 @@
 <title>Mission 1 - Classified Imperium Briefing</title>
 <style>
     body {
-        background-image: url('https://raw.githubusercontent.com/Nerull91/40k-Crusade-The-Shattered-Veil/main/missions/computer_screen.png');
-        background-size: cover;
         color: white;
         font-family: Arial, sans-serif;
         margin: 0;
@@ -23,15 +21,16 @@
         white-space: pre-line;
         margin-top: 20px; /* adjust according to your preference */
         width: 200%; /* 50% wider */
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-        padding: 10px;
+        background-image: url('https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/background_image.jpg?raw=true');
+        background-size: cover;
+        padding: 20px; /* Add some padding for better readability */
     }
 </style>
 </head>
 <body>
 <div id="audio-player">
     <audio id="audio" controls>
-        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/main/missions/mission_1/mission1_imperium_briefing.mp3?raw=true" type="audio/mpeg">
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/e4d23a78916217cc5bba59fa7c43bacaa837fdfc/missions/mission_1/I-7KGH9D3/mission1_imperium_briefing.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <div>
@@ -62,10 +61,6 @@
         typeWriter(); // Start typing
     });
 
-    audio.addEventListener('pause', function() {
-        // Typing animation continues even when paused
-    });
-
     volumeControl.addEventListener('input', function() {
         audio.volume = volumeControl.value;
     });
@@ -84,3 +79,4 @@
 </script>
 </body>
 </html>
+
