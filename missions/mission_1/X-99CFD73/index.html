@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission 1 - Classified Imperium Briefing</title>
+<style>
+    body {
+        background-color: black;
+        background-image: url('https://raw.githubusercontent.com/Nerull91/40k-Crusade-The-Shattered-Veil/main/missions/terminal_bg.png');
+        background-size: cover;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    #audio-player {
+        width: 300px;
+        margin: 50px auto;
+        text-align: left;
+    }
+    #typing-text {
+        color: lime;
+        white-space: pre-line;
+        margin-top: 20px; /* adjust according to your preference */
+        width: 200%; /* 50% wider */
+    }
+</style>
+</head>
+<body>
+<div id="audio-player">
+    <audio id="audio" controls>
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/086927c2c34f8baa62f5825dab538f421b2667e9/missions/mission_1/C-8DL0P33/mission1_chaos_briefing.mp3?raw=true" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        <input type="range" id="seek-bar" min="0" value="0">
+    </div>
+    <div id="typing-text"></div>
+</div>
 
+<script>
+    const audio = document.getElementById('audio');
+    const volumeControl = document.getElementById('volume-control');
+    const seekBar = document.getElementById('seek-bar');
+    const typingText = document.getElementById('typing-text');
+    const briefingText = `Mission Briefing: Operation Cerberus\n\nClassification: Alpha-Omega Clearance - Chaos Undivided\n\nObjective: Subjugation of Strategic Vox Relay Nodes\n\nTarget Planets: Codename Cerberus – Vadinax Sector\n\nBackground:\nPlanets Cerberus, a festering cesspool within the domain of the Dark Gods, harbors key Vox Relay Nodes crucial for maintaining communication amongst the forces of Chaos. Recent warp disturbances have foretold an opportunity for conquest, as rival factions vie for control over these critical assets. The Dark Gods demand that we seize control of Cerberus to further our dark ambitions and sow discord within the Imperium.\n\nMission Overview:\nOperation Cerberus heralds the commencement of a grand campaign to assert the dominance of Chaos over the material realm in the Vadinax Sector. Our malevolent legions will wage war upon the surface of Cerberus, seeking to secure control over the Vox Relay Nodes to spread corruption and chaos throughout the galaxy.\n\nExecution:\n\nDescent of the Damned: Our forces shall descend upon Cerberus like a plague, emerging from the warp in a maelstrom of daemonic energy and unholy fervor. Chaos Dreadnoughts and twisted war engines will ravage the planet's surface as we establish our infernal foothold amidst the screams of the damned.\n\nCorruption Unleashed: Our vile agents, blessed by the Dark Gods' favor, shall infiltrate Cerberus's Vox Relay Nodes, corrupting their systems with the foul taint of the warp. With every corrupted transmission, the grip of Chaos upon the planet shall tighten, spreading madness and despair amongst the Imperium's faithful.\n\nWarband Conquest: Our Chaos Space Marines, empowered by the gifts of their infernal patrons, shall lead the charge against the Imperium's defenders, sowing death and destruction in their wake. Bloodthirsty berserkers and twisted death guards shall unleash hellfire upon the enemy, leaving naught but ruin in their wake.\n\nDaemonic Onslaught: The legions of the warp shall be unleashed upon Cerberus, as daemonic hordes surge forth to overwhelm the Imperium's defenses. Bloodletters, Plaguebearers, and horrors beyond mortal comprehension shall descend upon the planet, tearing apart flesh and soul alike in the name of the Dark Gods.\n\nChaos Ascendant: Even as the Imperium's defenders rally against us, we shall stand firm in our devotion to Chaos, for we are the chosen instruments of the Ruinous Powers. Through bloodshed and betrayal, we shall carve out our dominion upon Cerberus, spreading the corruption of Chaos to every corner of the galaxy.\n\nRules of Engagement:\n\nEmbrace the chaotic whims of the Dark Gods and revel in the destruction of the Imperium's forces.\nShow no mercy to those who stand in the way of Chaos's ascendancy.\nEmbrace the madness of the warp and unleash its unholy power upon the material realm.\n\nConclusion:\nOperation Cerberus marks the beginning of a new era of darkness, as the forces of Chaos rise to claim dominion over the material realm of the Vadinax Sector. Victory in this infernal crusade will herald the triumph of Chaos and the eternal reign of the Dark Gods. Let the galaxy burn in the fires of our ambition, for Chaos is eternal!\n\nEnd of Briefing`;
+
+    let index = 0;
+
+    function typeWriter() {
+        if (index < briefingText.length) {
+            typingText.innerHTML += briefingText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50); // Adjust typing speed here
+        }
+    }
+
+    audio.addEventListener('play', function() {
+        typingText.innerHTML = ''; // Clear existing text
+        index = 0; // Reset index
+        typeWriter(); // Start typing
+    });
+
+    audio.addEventListener('pause', function() {
+        // Pause typing animation
+    });
+
+    volumeControl.addEventListener('input', function() {
+        audio.volume = volumeControl.value;
+    });
+
+    seekBar.addEventListener('input', function() {
+        audio.currentTime = seekBar.value * audio.duration;
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        seekBar.value = audio.currentTime / audio.duration;
+    });
+
+    audio.addEventListener('ended', function() {
+        // End of audio, additional actions can be added here
+    });
+</script>
+</body>
+</html>
