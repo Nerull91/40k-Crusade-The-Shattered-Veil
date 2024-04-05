@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission 1 - Classified Imperium Briefing</title>
+<style>
+    body {
+        background-color: black;
+        background-image: url('https://raw.githubusercontent.com/Nerull91/40k-Crusade-The-Shattered-Veil/main/missions/terminal_bg2_blue.png');
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+        
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    #audio-player {
+        width: 300px;
+        margin: 50px auto;
+        text-align: left;
+    }
+    #typing-text {
+        color: lime;
+        white-space: pre-line;
+        margin-top: 20px; /* adjust according to your preference */
+        width: 200%; /* 50% wider */
+    }
+</style>
+</head>
+<body>
+<div id="audio-player">
+    <audio id="audio" controls>
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/0355cc1b98d71596b60e394f3213f34374415b4b/missions/mission_2/I-00RDK13/mission2_imperium_briefing.mp3?raw=true" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        <input type="range" id="seek-bar" min="0" value="0">
+    </div>
+    <div id="typing-text"></div>
+</div>
+
+<script>
+    const audio = document.getElementById('audio');
+    const volumeControl = document.getElementById('volume-control');
+    const seekBar = document.getElementById('seek-bar');
+    const typingText = document.getElementById('typing-text');
+    const briefingText = `Mission Briefing: Operation Dark Harvest
+
+Classification: Ordo Malleus - Clearance Level: Inquisitorial Seal
+
+Objective: Secure Vital Imperial Supplies
+
+Location: Target World: Designation: Stygian Prime
+
+Background:
+In the wake of our valorous endeavors in Operation Cerberus, the relentless crusade of the Imperium demands unwavering vigilance and relentless pursuit of victory. The eternal struggle for dominance requires a constant influx of strategic resources to fuel our righteous cause. Intelligence garnered from Operation Cerberus has illuminated the importance of Stygian Prime, a bastion of vital Imperial supplies sought by both the righteous and the heretical. Our adversaries, in their blasphemous designs, seek to usurp these sacred treasures, further accentuating their significance. Operation Dark Harvest serves as a bastion of Imperial might, as we undertake the sacred duty of securing these vital supplies to fortify our position and crush the enemies of the Imperium beneath our indomitable heel.
+
+Mission Overview:
+Operation Dark Harvest stands as an indomitable pillar in our holy crusade. With intelligence confirming the vile machinations of our foes in their pursuit of the sacred supplies on Stygian Prime, our mission assumes paramount importance. Our mandate is clear: seize these invaluable resources to deny the heretics their ill-gotten gains and fortify the bulwarks of Imperial strength. As we navigate this crucible of conflict, success in our endeavor not only secures our ascendance but delivers a resounding blow to the enemies of the Emperor in the unending battle for supremacy.
+
+Rules of Engagement:
+- Maintain absolute purity of purpose and adhere to the righteous path set forth by the Emperor.
+- Show no mercy to the heretics and traitors who seek to undermine the glory of the Imperium.
+- Let the fury of the righteous consume all who stand against the might of the God-Emperor.
+
+Conclusion:
+Operation Dark Harvest embodies the unyielding spirit of the Imperium in its eternal struggle against the forces of darkness. Victory in this holy crusade shall not only secure vital Imperial supplies but also deal a significant blow to the morale and capabilities of our enemies. Let us march forth with unwavering faith and righteous zeal, for in the Emperor's name, we shall emerge triumphant!
+
+End of Briefing`;
+
+    let index = 0;
+
+    function typeWriter() {
+        if (index < briefingText.length) {
+            typingText.innerHTML += briefingText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 55); // Adjust typing speed here
+        }
+    }
+
+    audio.addEventListener('play', function() {
+        typingText.innerHTML = ''; // Clear existing text
+        index = 0; // Reset index
+        typeWriter(); // Start typing
+    });
+
+    audio.addEventListener('pause', function() {
+        // Pause typing animation
+    });
+
+    volumeControl.addEventListener('input', function() {
+        audio.volume = volumeControl.value;
+    });
+
+    seekBar.addEventListener('input', function() {
+        audio.currentTime = seekBar.value * audio.duration;
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        seekBar.value = audio.currentTime / audio.duration;
+    });
+
+    audio.addEventListener('ended', function() {
+        // End of audio, additional actions can be added here
+    });
+</script>
+</body>
+</html>
