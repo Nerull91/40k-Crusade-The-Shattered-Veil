@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission 1 - Classified Imperium Briefing</title>
+<style>
+    body {
+        background-color: black;
+        background-image: url('https://raw.githubusercontent.com/Nerull91/40k-Crusade-The-Shattered-Veil/main/missions/terminal_bg2_red.png');
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+        
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    #audio-player {
+        width: 300px;
+        margin: 50px auto;
+        text-align: left;
+    }
+    #typing-text {
+        color: lime;
+        white-space: pre-line;
+        margin-top: 20px; /* adjust according to your preference */
+        width: 200%; /* 50% wider */
+    }
+</style>
+</head>
+<body>
+<div id="audio-player">
+    <audio id="audio" controls>
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/0355cc1b98d71596b60e394f3213f34374415b4b/missions/mission_2/C-0PKF978/mission2_chaos_briefing.mp3?raw=true" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        <input type="range" id="seek-bar" min="0" value="0">
+    </div>
+    <div id="typing-text"></div>
+</div>
+
+<script>
+    const audio = document.getElementById('audio');
+    const volumeControl = document.getElementById('volume-control');
+    const seekBar = document.getElementById('seek-bar');
+    const typingText = document.getElementById('typing-text');
+    const briefingText = `Mission Briefing: Operation Dark Harvest.
+
+Classification: Infernal Pact - Clearance Level: Daemonforged Sigil.
+
+Objective: Seize Crucial Resources for the Dark Crusade.
+
+Location: Target World: Codex: Stygian Prime.
+
+Background:
+In the wake of our previous triumphs, the insatiable hunger of Chaos drives us ever forward in the unending war against the False Emperor. The ceaseless conflict demands a constant stream of resources to fuel our infernal ambitions, and Stygian Prime has been revealed as a font of vital materiel coveted by both the servants of the Dark Gods and the pathetic loyalists of the Corpse-God. Our enemies, blinded by their delusions of grandeur, seek to claim these treasures for their own, further inflaming the flames of our eternal rivalry. Operation Dark Harvest stands as a beacon of Chaos, a dark promise to claim these resources and bend them to the will of the Ruinous Powers in our relentless pursuit of dominion.
+
+Mission Overview:
+Operation Dark Harvest represents a pivotal moment in our infernal crusade. With intelligence confirming the feeble attempts of our adversaries to seize the resources of Stygian Prime, our mission takes on paramount importance. Our task is clear: wrest control of these vital resources from the hands of the weaklings who would dare oppose the will of the Dark Gods. As we navigate the tumultuous currents of war, success in our endeavor not only bolsters our own power but strikes fear into the hearts of the misguided followers of the False Emperor, furthering our ultimate goal of eternal conquest.
+
+Rules of Engagement:
+- Embrace the chaotic energies of the Warp and unleash them upon our foes without restraint.
+- Show no mercy to the weaklings who cling to their false idols and delusions of order.
+- Let the destructive force of Chaos consume all who stand in the way of our ascension to ultimate power.
+
+Conclusion:
+Operation Dark Harvest embodies the unyielding spirit of Chaos in its eternal struggle against the false promises of the Corpse-God. Victory in this dark endeavor shall not only secure vital resources for our cause but also sow the seeds of fear and discord among our enemies. Let us march forth with unbridled fury and unfaltering devotion, for in the name of the Dark Gods, we shall reign supreme!
+
+End of Briefing`;
+
+    let index = 0;
+
+    function typeWriter() {
+        if (index < briefingText.length) {
+            typingText.innerHTML += briefingText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50); // Adjust typing speed here
+        }
+    }
+
+    audio.addEventListener('play', function() {
+        typingText.innerHTML = ''; // Clear existing text
+        index = 0; // Reset index
+        typeWriter(); // Start typing
+    });
+
+    audio.addEventListener('pause', function() {
+        // Pause typing animation
+    });
+
+    volumeControl.addEventListener('input', function() {
+        audio.volume = volumeControl.value;
+    });
+
+    seekBar.addEventListener('input', function() {
+        audio.currentTime = seekBar.value * audio.duration;
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        seekBar.value = audio.currentTime / audio.duration;
+    });
+
+    audio.addEventListener('ended', function() {
+        // End of audio, additional actions can be added here
+    });
+</script>
+</body>
+</html>
