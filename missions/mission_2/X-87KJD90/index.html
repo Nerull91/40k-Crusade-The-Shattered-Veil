@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission 1 - Classified Imperium Briefing</title>
+<style>
+    body {
+        background-color: black;
+        background-image: url('https://raw.githubusercontent.com/Nerull91/40k-Crusade-The-Shattered-Veil/main/missions/terminal_bg2_purple.png');
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+        
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    #audio-player {
+        width: 300px;
+        margin: 50px auto;
+        text-align: left;
+    }
+    #typing-text {
+        color: lime;
+        white-space: pre-line;
+        margin-top: 20px; /* adjust according to your preference */
+        width: 200%; /* 50% wider */
+    }
+</style>
+</head>
+<body>
+<div id="audio-player">
+    <audio id="audio" controls>
+        <source src="https://github.com/Nerull91/40k-Crusade-The-Shattered-Veil/blob/0355cc1b98d71596b60e394f3213f34374415b4b/missions/mission_2/X-87KJD90/mission2_xenos_briefing.mp3?raw=true" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div>
+        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        <input type="range" id="seek-bar" min="0" value="0">
+    </div>
+    <div id="typing-text"></div>
+</div>
+
+<script>
+    const audio = document.getElementById('audio');
+    const volumeControl = document.getElementById('volume-control');
+    const seekBar = document.getElementById('seek-bar');
+    const typingText = document.getElementById('typing-text');
+    const briefingText = `Mission Briefing: Operation Dark Harvest
+
+Classification: Xenos Collective - Clearance Level: Hive Nexus Encryption
+
+Objective: Secure Vital Resources for Xenos Expansion
+
+Location: Target World: Designation: Stygian Prime
+
+Background:
+In the wake of our previous victories, the expansion of Xenos influence demands a constant influx of resources to fuel our galactic ascendance. Stygian Prime has been identified as a rich repository of vital materials sought by both our xenos brethren and the primitive species clinging to their fading empires. Our adversaries, blinded by their narrow-mindedness, seek to hoard these resources for themselves, ignorant of the greater cosmic order. Operation Dark Harvest signifies our resolve to claim these resources and propel our xenos kin towards unparalleled greatness.
+
+Mission Overview:
+Operation Dark Harvest stands as a pivotal moment in our xenos expansion. Intelligence confirms the feeble attempts of the primitive species to seize the resources of Stygian Prime, underscoring the importance of our mission. Our objective is clear: secure these vital resources to further our xenos dominion and ensure our place among the stars. As we navigate the intricate web of interstellar politics, success in this endeavor not only strengthens our own power but serves as a warning to all who would oppose the inexorable advance of the Xenos Collective.
+
+Rules of Engagement:
+- Embrace the diversity of our xenos brethren and coordinate our efforts with precision and unity.
+- Show no mercy to the primitive species who seek to hoard resources at the expense of the greater galactic community.
+- Let the collective strength of the Xenos Collective overwhelm all who dare stand in our path to expansion.
+
+Conclusion:
+Operation Dark Harvest embodies the relentless expansion of the Xenos Collective and the collective will of our xenos brethren to claim our rightful place in the cosmos. Victory in this mission shall not only secure vital resources for our continued expansion but also reaffirm our dominance over the primitive species clinging to their fading empires. Let us advance with unwavering determination and unity of purpose, for in the name of the Xenos Collective, we shall conquer the stars!
+
+End of Briefing`;
+
+    let index = 0;
+
+    function typeWriter() {
+        if (index < briefingText.length) {
+            typingText.innerHTML += briefingText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 75); // Adjust typing speed here
+        }
+    }
+
+    audio.addEventListener('play', function() {
+        typingText.innerHTML = ''; // Clear existing text
+        index = 0; // Reset index
+        typeWriter(); // Start typing
+    });
+
+    audio.addEventListener('pause', function() {
+        // Pause typing animation
+    });
+
+    volumeControl.addEventListener('input', function() {
+        audio.volume = volumeControl.value;
+    });
+
+    seekBar.addEventListener('input', function() {
+        audio.currentTime = seekBar.value * audio.duration;
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        seekBar.value = audio.currentTime / audio.duration;
+    });
+
+    audio.addEventListener('ended', function() {
+        // End of audio, additional actions can be added here
+    });
+</script>
+</body>
+</html>
